@@ -1,10 +1,15 @@
 {
+  "presets": [
+    "@babel/preset-env",
+    ["@babel/preset-react", { "runtime": "automatic" }]
+  ], //최신(ES6)문법을 구형 브라우저, 특정 실행 환경에 맞게 변환
   "plugins": [
     [
-      "@babel/plugin-transform-react-jsx",
+      "@babel/plugin-transform-react-jsx", // jsx 트랜스파일링
       {
-        "runtime": "classic",
-        "pragma": "createElement"
+        "runtime": "automatic", //변환 방식
+        "importSource": "@/libs/jsx-runtime.js" //사용자 정의 JSX 런타임 지정
+        // "importSource": "react" // import react
       }
     ]
   ]
