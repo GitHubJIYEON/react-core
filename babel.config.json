@@ -1,11 +1,15 @@
 {
-  "plugins": [
-    [
-      "@babel/plugin-transform-react-jsx",
-      {
-        "runtime": "classic",
-        "pragma": "createElement"
-      }
+    "presets": ["@babel/preset-env"],
+    "esbuild": {
+        "jsx": "automatic" // automatic runtime만 명시
+    },
+    "plugins": [
+        [
+            "@babel/plugin-transform-react-jsx",
+            {
+                "runtime": "automatic",
+                "importSource": "@/libs/jsx"
+            }
+        ]
     ]
-  ]
 }
